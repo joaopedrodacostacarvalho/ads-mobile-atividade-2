@@ -70,7 +70,7 @@ const chats = [
 export default function ListaChats() {
   const router = useRouter();
 
-  const renderChatItem = ({ item }) => (
+  const renderChatItem = ({ item }: any) => (
     <TouchableOpacity style={styles.chatItem}>
       <View style={[styles.avatar, { backgroundColor: item.color }]}>
         <Text style={styles.avatarText}>{item.avatar}</Text>

@@ -1,4 +1,5 @@
 import { Ionicons } from "@expo/vector-icons";
+import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import { useRouter } from "expo-router";
 import {
     ScrollView,
@@ -41,28 +42,36 @@ export default function Consulta() {
         <Text style={styles.sectionTitle}>Categories</Text>
         <View style={styles.categoriesContainer}>
           <TouchableOpacity style={styles.categoryItem}>
-            <View style={[styles.categoryIcon, { backgroundColor: "#E8F5E9" }]}>
+            <View
+              style={[styles.categorySquare, { backgroundColor: "#E8F5E9" }]}
+            >
               <Ionicons name="medical" size={24} color="#4CAF50" />
             </View>
             <Text style={styles.categoryText}>Consultation</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.categoryItem}>
-            <View style={[styles.categoryIcon, { backgroundColor: "#FFEBEE" }]}>
-              <Ionicons name="tooth" size={24} color="#F44336" />
+            <View
+              style={[styles.categorySquare, { backgroundColor: "#FFEBEE" }]}
+            >
+              <FontAwesome5 name="tooth" size={24} color="#F44336" />
             </View>
             <Text style={styles.categoryText}>Dentist</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.categoryItem}>
-            <View style={[styles.categoryIcon, { backgroundColor: "#E3F2FD" }]}>
+            <View
+              style={[styles.categorySquare, { backgroundColor: "#E3F2FD" }]}
+            >
               <Ionicons name="heart" size={24} color="#2196F3" />
             </View>
             <Text style={styles.categoryText}>Cardiologist</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.categoryItem}>
-            <View style={[styles.categoryIcon, { backgroundColor: "#FFF3E0" }]}>
+            <View
+              style={[styles.categorySquare, { backgroundColor: "#FFF3E0" }]}
+            >
               <Ionicons name="business" size={24} color="#FF9800" />
             </View>
             <Text style={styles.categoryText}>Hospital</Text>
@@ -197,13 +206,18 @@ const styles = StyleSheet.create({
   categoryItem: {
     alignItems: "center",
   },
-  categoryIcon: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
+  categorySquare: {
+    width: 60,
+    height: 60,
+    borderRadius: 12,
     justifyContent: "center",
     alignItems: "center",
-    marginBottom: 5,
+    marginBottom: 8,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 3,
+    elevation: 2,
   },
   categoryText: {
     fontSize: 12,

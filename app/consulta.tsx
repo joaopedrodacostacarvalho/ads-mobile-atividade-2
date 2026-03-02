@@ -4,6 +4,7 @@ import {
     ScrollView,
     StyleSheet,
     Text,
+    TextInput,
     TouchableOpacity,
     View,
 } from "react-native";
@@ -19,9 +20,20 @@ export default function Consulta() {
           <Text style={styles.greeting}>Welcome</Text>
           <Text style={styles.userName}>Dani Martinez</Text>
         </View>
-        <View style={styles.searchIcon}>
-          <Ionicons name="search" size={24} color="#333" />
-        </View>
+      </View>
+
+      <View style={styles.searchContainer}>
+        <TextInput
+          style={styles.searchInput}
+          placeholder="Search for doctor"
+          placeholderTextColor="#999"
+        />
+        <Ionicons
+          name="search"
+          size={24}
+          color="#999"
+          style={styles.searchIcon}
+        />
       </View>
 
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -150,15 +162,24 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#333",
   },
-  searchIcon: {
+  searchContainer: {
+    flexDirection: "row",
+    alignItems: "center",
     backgroundColor: "#FFF",
-    padding: 10,
+    marginHorizontal: 20,
+    marginBottom: 20,
+    paddingHorizontal: 15,
     borderRadius: 10,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
+    borderWidth: 1,
+    borderColor: "#E0E0E0",
+  },
+  searchInput: {
+    flex: 1,
+    paddingVertical: 12,
+    fontSize: 16,
+  },
+  searchIcon: {
+    marginLeft: 10,
   },
   sectionTitle: {
     fontSize: 18,
